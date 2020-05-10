@@ -10,9 +10,8 @@
   </head>
 
   <body>
-    <%= render 'partial/navbar' %>
+    <%= render 'partial/navbar' if current_user%>
 
-    <%# ==========ここから追加する========== %>
     <% if flash[:notice] %>
       <div class="alert alert-info">
         <%= flash[:notice] %>
@@ -23,7 +22,6 @@
         <%= flash[:alert] %>
       </div>
     <% end %>
-    <%# ==========ここまで追加する========== %>
 
     <%= yield %>
   </body>
